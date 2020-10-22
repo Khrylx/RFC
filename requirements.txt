@@ -1,0 +1,9 @@
+pyyaml
+future
+bvh==0.3
+scipy==1.5.1
+gym==0.10.5
+mujoco-py==2.0.2.9
+opencv-python==3.4.11.43
+torch==1.6.0
+tensorboard==2.0

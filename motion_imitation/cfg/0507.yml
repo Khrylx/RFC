@@ -1,0 +1,112 @@
+# data
+motion_id: '05_07'
+
+# training parameters
+gamma: 0.95
+tau: 0.95
+policy_htype: relu
+policy_hsize: [512, 256]
+policy_optimizer: 'Adam'
+policy_lr: 5.e-5
+policy_momentum: 0.0
+policy_weightdecay: 0.0
+value_htype: relu
+value_hsize: [512, 256]
+value_optimizer: 'Adam'
+value_lr: 3.e-4
+value_momentum: 0.0
+value_weightdecay: 0.0
+clip_epsilon: 0.2
+min_batch_size: 50000
+mini_batch_size: 2048
+num_optim_epoch: 10
+log_std: -2.3
+fix_std: true
+max_iter_num: 2000
+seed: 1
+save_model_interval: 100
+reward_id: 'local_rfc_implicit'
+reward_weights:
+  w_p: 0.5
+  w_v: 0.0
+  w_e: 0.3
+  w_rp: 0.05
+  w_rv: 0.1
+  w_vf: 0.05
+  k_p: 2
+  k_v: 0.005
+  k_e: 20
+  k_vf: 1
+  k_rh: 300
+  k_rq: 300
+  k_rl: 1.0
+  k_ra: 0.1
+
+# expert and environment
+mujoco_model: mocap_v2
+vis_model: mocap_v2_vis
+env_episode_len: 200
+env_term_body: 'root'
+env_expert_trail_steps: 10
+obs_coord: 'heading'
+obs_phase: true
+
+# RFC parameters
+residual_force: true
+residual_force_scale: 100.0
+residual_force_mode: implicit
+
+# other joint and body parameters
+jkp_multiplier: 1.0
+jkd_multiplier: 2.0
+joint_params:
+  # ["name", "k_p", "k_d", "a_ref", "a_scale", "torque_limit"]
+  - ["lfemur_z"       ,  500.0,  50.0, -20.0, 1.0, 200.0]
+  - ["lfemur_y"       ,  500.0,  50.0,   0.0, 1.0, 200.0]
+  - ["lfemur_x"       ,  500.0,  50.0,   0.0, 5.0, 200.0]
+  - ["ltibia_x"       ,  500.0,  50.0,  45.0, 5.0, 150.0]
+  - ["lfoot_z"        ,  400.0,  40.0,   0.0, 1.0, 150.0]
+  - ["lfoot_y"        ,  400.0,  40.0,   0.0, 1.0, 150.0]
+  - ["lfoot_x"        ,  400.0,  40.0,   0.0, 5.0, 150.0]
+  - ["rfemur_z"       ,  500.0,  50.0,  20.0, 1.0, 200.0]
+  - ["rfemur_y"       ,  500.0,  50.0,   0.0, 1.0, 200.0]
+  - ["rfemur_x"       ,  500.0,  50.0,   0.0, 5.0, 200.0]
+  - ["rtibia_x"       ,  500.0,  50.0,  45.0, 5.0, 150.0]
+  - ["rfoot_z"        ,  400.0,  40.0,   0.0, 1.0, 150.0]
+  - ["rfoot_y"        ,  400.0,  40.0,   0.0, 1.0, 150.0]
+  - ["rfoot_x"        ,  400.0,  40.0,   0.0, 5.0, 150.0]
+  - ["upperback_z"    , 1000.0, 100.0,   0.0, 1.0, 200.0]
+  - ["upperback_y"    , 1000.0, 100.0,   0.0, 1.0, 200.0]
+  - ["upperback_x"    , 1000.0, 100.0,   0.0, 1.0, 200.0]
+  - ["lowerneck_z"    ,  200.0,  20.0,   0.0, 1.0,  50.0]
+  - ["lowerneck_y"    ,  200.0,  20.0,   0.0, 1.0,  50.0]
+  - ["lowerneck_x"    ,  200.0,  20.0,   0.0, 1.0,  50.0]
+  - ["lclavicle_z"    ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["lclavicle_y"    ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["lhumerus_z"     ,  400.0,  40.0,  80.0, 1.0, 100.0]
+  - ["lhumerus_y"     ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["lhumerus_x"     ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["lradius_x"      ,  300.0,  30.0,  45.0, 5.0,  60.0]
+  - ["rclavicle_z"    ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["rclavicle_y"    ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["rhumerus_z"     ,  400.0,  40.0, -80.0, 1.0, 100.0]
+  - ["rhumerus_y"     ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["rhumerus_x"     ,  400.0,  40.0,   0.0, 1.0, 100.0]
+  - ["rradius_x"      ,  300.0,  30.0,  45.0, 5.0,  60.0]
+
+body_params:
+  # ["name","diff weight"]
+  - ["lfemur"       , 1.0]
+  - ["ltibia"       , 1.0]
+  - ["lfoot"        , 0.2]
+  - ["rfemur"       , 1.0]
+  - ["rtibia"       , 1.0]
+  - ["rfoot"        , 0.2]
+  - ["upperback"    , 1.0]
+  - ["lowerneck"    , 1.0]
+  - ["lclavicle"    , 1.0]
+  - ["lhumerus"     , 1.0]
+  - ["lradius"      , 1.0]
+  - ["rclavicle"    , 1.0]
+  - ["rhumerus"     , 1.0]
+  - ["rradius"      , 1.0]
