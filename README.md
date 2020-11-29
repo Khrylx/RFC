@@ -60,7 +60,7 @@ If you don't need to adjust the clip, you can just run the script without `--ren
 ### Train RFC policy
 You can create your own config file using [0506.yml](motion_imitation/cfg/0506.yml) as a template. Be sure to set [motion_id](motion_imitation/cfg/0506.yml#L2) to the motion you have processed. To train an RFC policy, just run:
 ```
-python motion_imitation/motion_im.py --cfg 0506
+python motion_imitation/motion_im.py --cfg 0506 --num_threads <max_num_CPU_threads_you_have>
 ```
 This will save models and logs into [results/motion_im/0506](results/motion_im/0506).
 
