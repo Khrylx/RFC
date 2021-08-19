@@ -1,5 +1,5 @@
 # Residual Force Control (RFC)
-![Loading RFC teaser](data/gif/teaser1.gif "DLow Overview") ![Loading RFC teaser](data/gif/teaser2.gif "DLow Overview")
+![Loading RFC teaser](data/gif/teaser1.gif "RFC Teaser") ![Loading RFC teaser](data/gif/teaser2.gif "RFC Teaser")
 ---
 This repo contains the official implementation of our paper:
   
