@@ -71,12 +71,12 @@ This will save models and logs into [results/motion_im/0506](results/motion_im/0
 
 # Citation
 If you find our work useful in your research, please cite our paper [RFC](https://www.ye-yuan.com/rfc):
-```
+```bibtex
 @inproceedings{yuan2020residual,
-  title={Residual Force Control for Agile Human Behavior Imitation and Extended Motion Synthesis},
-  author={Yuan, Ye and Kitani, Kris},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2020}
+    title={Residual Force Control for Agile Human Behavior Imitation and Extended Motion Synthesis},
+    author={Yuan, Ye and Kitani, Kris},
+    booktitle={Advances in Neural Information Processing Systems},
+    year={2020}
 }
 ```
 
